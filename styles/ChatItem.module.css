@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid lightgrey;
+  align-items: flex-start;
+  padding: 10px;
+  color: gray;
+  cursor: pointer;
+}
+
+.avatar {
+  border-radius: 50%;
+  height: 52px;
+  width: 52px;
+  margin-right: 10px;
+}
+.wrapper {
+  display: flex;
+  width: 75%;
+}
+.username {
+  font-size: 1.2rem;
+  width: 75%;
+}
+.messageDate {
+  font-size: 0.86rem;
+  width: 25%;
+  text-align: right;
+}
+.lastMessage {
+  font-weight: 300;
+  font-size: 0.9rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.container:active {
+  background-color: lightgray;
+}
