@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store.type";
 import styles from "../styles/MessagesList.module.css";
-import Image from "next/image";
 import { GoBackButton } from "./common/GoBackButton";
 import { MessagePanel } from "./common/MessagePanel";
 import { MessageListData } from "./MessageListData";
@@ -29,7 +28,7 @@ export const MessagesList: React.FC<Props> = ({ displayChats, width }) => {
       <div className={styles.listHeader}>
         {width < 768 && <GoBackButton onClick={() => displayChats()} />}
         {selectedInterlocutor && (
-          <Image
+          <img
             src={selectedInterlocutor?.avatar}
             alt="companion avatar"
             className={styles.avatar}

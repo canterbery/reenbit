@@ -26,4 +26,7 @@ module.exports = {
     // Important: return the modified config
     return config;
   },
+  images: {
+    domains: ["i.pravatar.cc"],
+  },
 };

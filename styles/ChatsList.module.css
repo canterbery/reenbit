@@ -19,6 +19,8 @@
   height: 52px;
   width: 52px;
   margin: 5px;
+  position: relative;
+  overflow: hidden;
 }
 .searchContainer {
   width: 100%;

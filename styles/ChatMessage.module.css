@@ -19,6 +19,8 @@
   height: 52px;
   width: 52px;
   margin: 0px 10px 0 10px;
+  position: relative;
+  overflow: hidden;
 }
 .message {
   padding: 5px;

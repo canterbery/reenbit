@@ -23,6 +23,8 @@
   height: 52px;
   width: 52px;
   margin: 5px;
+  position: relative;
+  overflow: hidden;
 }
 .username {
   font-size: 1.2rem;
