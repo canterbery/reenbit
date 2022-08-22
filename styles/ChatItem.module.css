@@ -14,7 +14,6 @@
   width: 52px;
   margin-right: 10px;
   position: relative;
-  overflow: hidden;
 }
 .wrapper {
   display: flex;
