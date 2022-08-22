@@ -6,6 +6,7 @@ import { clearState } from "../../redux/chatDataSlice";
 import { RootState } from "../../redux/store.type";
 import styles from "../../styles/ChatsList.module.css";
 import { ChatListData } from "./ChatListData";
+import Image from "next/image";
 
 type Props = {
   displayMessages(): void;
@@ -46,7 +47,7 @@ export const ChatsList: React.FC<Props> = ({ displayMessages }) => {
     <div className={styles.container}>
       <div className={styles.listHeader}>
         <div>
-          <img
+          <Image
             src={userData?.user.avatar}
             alt="companion avatar"
             className={styles.avatar}

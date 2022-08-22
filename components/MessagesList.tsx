@@ -1,8 +1,7 @@
-import { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store.type";
 import styles from "../styles/MessagesList.module.css";
-import { ChatMessage } from "./ChatMessage";
+import Image from "next/image";
 import { GoBackButton } from "./common/GoBackButton";
 import { MessagePanel } from "./common/MessagePanel";
 import { MessageListData } from "./MessageListData";
@@ -21,8 +20,6 @@ export const MessagesList: React.FC<Props> = ({ displayChats, width }) => {
     (state: RootState) => state.chatData.currentUserData.selectedInterlocutor
   );
 
-  if (!selectedInterlocutor) return <div></div>;
-
   const currentUser = useSelector(
     (state: RootState) => state.chatData.currentUserData.user
   );
@@ -31,11 +28,13 @@ export const MessagesList: React.FC<Props> = ({ displayChats, width }) => {
     <div className={styles.container}>
       <div className={styles.listHeader}>
         {width < 768 && <GoBackButton onClick={() => displayChats()} />}
-        <img
-          src={selectedInterlocutor?.avatar}
-          alt="companion avatar"
-          className={styles.avatar}
-        />
+        {selectedInterlocutor && (
+          <Image
+            src={selectedInterlocutor?.avatar}
+            alt="companion avatar"
+            className={styles.avatar}
+          />
+        )}
         <span className={styles.username}>{selectedInterlocutor?.name}</span>
       </div>
       {currentIndex === null && <div className={styles.messages}></div>}
@@ -43,10 +42,12 @@ export const MessagesList: React.FC<Props> = ({ displayChats, width }) => {
         <MessageListData conversationIndex={currentIndex} />
       )}
       <div className={styles.listFooter}>
-        <MessagePanel
-          sender={currentUser.id}
-          receiver={selectedInterlocutor.id}
-        />
+        {selectedInterlocutor && (
+          <MessagePanel
+            sender={currentUser.id}
+            receiver={selectedInterlocutor.id}
+          />
+        )}
       </div>
     </div>
   );

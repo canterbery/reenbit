@@ -1,5 +1,6 @@
 import { prepareMessageDateWithTime } from "../helpers/prepareMessageDate";
 import styles from "../styles/ChatMessage.module.css";
+import Image from "next/image";
 
 type Props = {
   avatar?: string;
@@ -20,8 +21,8 @@ export const ChatMessage: React.FC<Props> = ({
         styles.container + " " + (side === "left" ? styles.left : styles.right)
       }
     >
-      {side === "left" && (
-        <img src={avatar} alt="companion avatar" className={styles.avatar} />
+      {side === "left" && avatar && (
+        <Image src={avatar} alt="companion avatar" className={styles.avatar} />
       )}
       <div>
         <div
