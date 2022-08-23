@@ -19,7 +19,6 @@ const Home: NextPage<Props> = ({ session }) => {
   const { height, width } = useWindowDimensions();
   const dispatch = useDispatch();
 
-  console.log(session);
   if (session?.user) {
     dispatch(
       updateDefaultUser({
