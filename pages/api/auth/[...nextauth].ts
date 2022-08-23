@@ -17,8 +17,7 @@ export default NextAuth({
         const user = {
           id: 1,
           name: credentials?.name,
-          image:
-            "https://cultureamp.design/static/a489d86dba895745f93a8d1268fe713f/avatar.svg",
+          image: "https://via.placeholder.com/50",
         };
 
         // If no error and we have user data, return it
