@@ -1,6 +1,6 @@
 import type { GetServerSideProps, NextPage } from "next";
 import { Session } from "next-auth";
-import { getSession, useSession } from "next-auth/react";
+import { getSession } from "next-auth/react";
 import Head from "next/head";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,7 +8,6 @@ import { ChatsList } from "../components/ChatList/ChatsList";
 import { MessagesList } from "../components/MessagesList";
 import useWindowDimensions from "../helpers/useWindowDimensions";
 import { setCurrentUser, updateDefaultUser } from "../redux/chatDataSlice";
-import { RootState } from "../redux/store.type";
 import styles from "../styles/Home.module.css";
 
 type Props = {

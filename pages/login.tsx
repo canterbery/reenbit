@@ -1,12 +1,17 @@
-import { useSession, signIn, signOut } from "next-auth/react";
+import { signIn } from "next-auth/react";
 import { useState } from "react";
+import useWindowDimensions from "../helpers/useWindowDimensions";
 import styles from "../styles/login/Login.module.css";
 
 const Login = () => {
-  const [name, setName] = useState<null | string>(null);
+  const { height, width } = useWindowDimensions();
+  const [name, setName] = useState<string>("");
   return (
     <div className={styles.container}>
-      <div className={styles.loginForm}>
+      <div
+        className={styles.loginForm}
+        style={{ width: width <= 375 ? width - 5 + "px" : "400px" }}
+      >
         <h3>Login Here</h3>
 
         <label htmlFor="name">Name</label>
@@ -25,6 +30,7 @@ const Login = () => {
               callbackUrl: `${window.location.origin}/`,
             })
           }
+          disabled={name.trim().length < 1}
         >
           Log In
         </button>

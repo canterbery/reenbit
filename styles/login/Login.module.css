@@ -64,6 +64,10 @@
   border-radius: 5px;
   cursor: pointer;
 }
+.logInButton:disabled {
+  background-color: lightgray;
+  cursor: not-allowed;
+}
 .logInGoogleButton {
   margin-top: 50px;
   width: 100%;
