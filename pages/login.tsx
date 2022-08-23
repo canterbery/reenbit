@@ -2,7 +2,7 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import { useState } from "react";
 import styles from "../styles/login/Login.module.css";
 
-const login = () => {
+const Login = () => {
   const [name, setName] = useState<null | string>(null);
   return (
     <div className={styles.container}>
@@ -42,4 +42,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;
