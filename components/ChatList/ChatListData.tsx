@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { findUserById } from "../../helpers/findUserById";
 import { SearchResults } from "../../helpers/handleSearch";
 import { prepareMessageDate } from "../../helpers/prepareMessageDate";
-import { Conversation } from "../../mock-data/Users";
+import { Conversation } from "../../mock-data/Database";
 import { setInterlocutor } from "../../redux/chatDataSlice";
 import { RootState } from "../../redux/store.type";
 import { ChatItem } from "./ChatItem";

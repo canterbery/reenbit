@@ -1,9 +1,9 @@
-import { Message } from "./../mock-data/Users";
+import { Message } from "../mock-data/Database";
 import { findConversationByIds } from "../helpers/findConversationbyIds";
 import { findUserById } from "../helpers/findUserById";
-import { Conversation, Conversations } from "../mock-data/Users";
-import { createSlice, current, PayloadAction } from "@reduxjs/toolkit";
-import { User, Users } from "../mock-data/Users";
+import { Conversation, Conversations } from "../mock-data/Database";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { User, Users } from "../mock-data/Database";
 import storage from "redux-persist/lib/storage";
 
 type InitialState = {
@@ -41,6 +41,10 @@ const chatDataSlice = createSlice({
       if (user) {
         state.currentUserData.user = user;
       }
+    },
+    updateDefaultUser: (state, action: PayloadAction<User>) => {
+      state.database.users[0].avatar = action.payload.avatar;
+      state.database.users[0].name = action.payload.name;
     },
     addConversation: (state, action: PayloadAction<Conversation>) => {
       state.database.conversations.push(action.payload);
@@ -120,5 +124,6 @@ export const {
   addMessage,
   addNotification,
   clearState,
+  updateDefaultUser,
 } = chatDataSlice.actions;
 export default chatDataSlice.reducer;

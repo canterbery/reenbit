@@ -5,13 +5,15 @@ import { sortConversationsByDate } from "../../helpers/sortConversationsByDate";
 import { clearState } from "../../redux/chatDataSlice";
 import { RootState } from "../../redux/store.type";
 import styles from "../../styles/ChatsList.module.css";
+import { LoginPanel } from "../common/LoginPanel";
 import { ChatListData } from "./ChatListData";
 
 type Props = {
   displayMessages(): void;
+  width: number;
 };
 
-export const ChatsList: React.FC<Props> = ({ displayMessages }) => {
+export const ChatsList: React.FC<Props> = ({ displayMessages, width }) => {
   const [filter, setFilter] = useState<string>("");
   const userData = useSelector(
     (state: RootState) => state.chatData.currentUserData
@@ -43,16 +45,21 @@ export const ChatsList: React.FC<Props> = ({ displayMessages }) => {
     );
   }
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      style={{ width: width < 1024 ? "100%" : "50%" }}
+    >
       <div className={styles.listHeader}>
-        <div>
+        <div style={{ display: "flex", WebkitJustifyContent: "space-between" }}>
           <img
             src={userData?.user.avatar}
             alt="companion avatar"
             onClick={() => dispatch(clearState())}
             className={styles.avatar}
           />
+          <LoginPanel />
         </div>
+        <span style={{ marginLeft: "10px" }}>{userData.user.name}</span>
         <div className={styles.searchContainer}>
           <input
             type="text"

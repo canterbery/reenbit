@@ -17,8 +17,9 @@ export type Message = {
 export let Users = [
   {
     id: 1,
-    name: "Vyacheslav",
-    avatar: "https://i.pravatar.cc/150?u=fake@pravatar.com14",
+    name: "Anonymous",
+    avatar:
+      "https://cultureamp.design/static/a489d86dba895745f93a8d1268fe713f/avatar.svg",
   },
   {
     id: 2,

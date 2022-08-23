@@ -38,3 +38,8 @@
 .container:active {
   background-color: lightgray;
 }
+.checkMark {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+}

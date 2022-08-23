@@ -1,4 +1,4 @@
-import { Conversations, Message, Users } from "../mock-data/Users";
+import { Conversations, Message, Users } from "../mock-data/Database";
 
 export type SearchResults = {
   messages: Message[];

@@ -1,4 +1,4 @@
-import { Conversation } from "../mock-data/Users";
+import { Conversation } from "../mock-data/Database";
 
 export const findConversationByIds = (
   userId: number,

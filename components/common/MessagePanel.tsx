@@ -37,7 +37,7 @@ export const MessagePanel: React.FC<Props> = ({ sender, receiver }) => {
           })
         );
       })
-      .then(() => dispatch(addNotification(sender)))
+      .then(() => dispatch(addNotification(receiver)))
       .then(() => notification());
   };
 
@@ -54,6 +54,7 @@ export const MessagePanel: React.FC<Props> = ({ sender, receiver }) => {
         receiver: receiver,
       })
     );
+    if (inputElement.current !== null) inputElement.current.value = "";
     setTimeout(() => generateResponse(sender, receiver), 15000);
   };
 

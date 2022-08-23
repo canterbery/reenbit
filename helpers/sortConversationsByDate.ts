@@ -1,4 +1,4 @@
-import { Conversations } from "./../mock-data/Users";
+import { Conversations } from "../mock-data/Database";
 export const sortConversationsByDate = (
   conversations: typeof Conversations
 ) => {
